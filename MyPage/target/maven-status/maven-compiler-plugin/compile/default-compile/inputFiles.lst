@@ -1,0 +1,12 @@
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/MyPageViewHandler.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/OrderCompleted.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/AbstractEvent.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/PolicyHandler.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/PaymentCancelled.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/SubscriptionCancelled.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/Subscribed.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/config/kafka/KafkaProcessor.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/MyPageApplication.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/MyPageRepository.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/MyPage.java
+/Users/snickerm/DEV/DT/iphonesubscription/MyPage/src/main/java/iphonesubscription/PaymentCompleted.java
