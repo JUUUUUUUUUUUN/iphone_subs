@@ -1,0 +1,95 @@
+server:
+  port: 8080
+
+---
+
+spring:
+  profiles: default
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        event-in:
+          group: Order
+          destination: iphonesubscription
+          contentType: application/json
+        event-out:
+          destination: iphonesubscription
+          contentType: application/json
+
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8081
+
+# payment 서비스 호출 주소
+api:
+  url:
+    payment: http://localhost:8082
+
+# 서킷브레이커 설정
+feign:
+  hystrix:
+    enabled: true
+    
+# Hystrix 설정: 요청처리 쓰레드에서 처리시간이 610 밀리초가 넘으면 서킷브레이커가 작동하여 차단하도록 설정
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
+---
+
+spring:
+  profiles: docker
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: my-kafka.kafka.svc.cluster.local:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        event-in:
+          group: Order
+          destination: iphonesubscription
+          contentType: application/json
+        event-out:
+          destination: iphonesubscription
+          contentType: application/json
+
+# payment service 호출 주소
+api:
+  url:
+    payment: http://Payment:8082
+
+# circuit breaker 설정
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
