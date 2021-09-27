@@ -56,7 +56,7 @@ public class Order {
     
     @PostUpdate
     public void onPostUpdate(){
-        System.out.println("\n\n================== Order onPostUpdate() 계약 수정(취소) 시작 ==================\n\n");
+        System.out.println("\n\n================== Order onPostUpdate() 주문 수정(취소) 시작 ==================\n\n");
         OrderCancelled orderCancelled = new OrderCancelled();
         BeanUtils.copyProperties(this, orderCancelled);
         orderCancelled.publishAfterCommit();
