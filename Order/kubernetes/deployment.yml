@@ -19,6 +19,13 @@ spec:
           image: isubcreg01.azurecr.io/order:v1
           ports:
             - containerPort: 8080
+          ## Config Map Setting
+          env:
+            - name: SYSTEM_MODE
+              valueFrom:
+                configMapKeyRef:
+                  name: systemmode
+                  key: sysmodeval
           readinessProbe:
             httpGet:
               path: '/actuator/health'
