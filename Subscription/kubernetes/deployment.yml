@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Subscription
+  name: subscription
   labels:
-    app: Subscription
+    app: subscription
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Subscription
+      app: subscription
   template:
     metadata:
       labels:
-        app: Subscription
+        app: subscription
     spec:
       containers:
-        - name: Subscription
-          image: username/Subscription:latest
+        - name: subscription
+          image: isubcreg01.azurecr.io/subscription
           ports:
             - containerPort: 8080
           readinessProbe:

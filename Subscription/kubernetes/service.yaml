@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Subscription
+  name: subscription
   labels:
-    app: Subscription
+    app: subscription
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Subscription
+    app: subscription
