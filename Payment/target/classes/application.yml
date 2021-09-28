@@ -72,5 +72,5 @@ spring:
 # subscription 호출 주소
 api:
   url:
-    subscription: http://Subscription:8083
+    subscription: http://Subscription:8080
 ---

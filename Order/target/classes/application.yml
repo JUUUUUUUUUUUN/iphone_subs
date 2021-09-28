@@ -83,7 +83,7 @@ spring:
 # payment service 호출 주소
 api:
   url:
-    payment: http://Payment:8082
+    payment: http://Payment:8080
 
 # circuit breaker 설정
 feign:
