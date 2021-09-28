@@ -47,7 +47,7 @@ api:
 # 서킷브레이커 설정
 feign:
   hystrix:
-    enabled: false
+    enabled: true
     
 # Hystrix 설정: 요청처리 쓰레드에서 처리시간이 610 밀리초가 넘으면 서킷브레이커가 작동하여 차단하도록 설정
 hystrix:
@@ -88,7 +88,7 @@ api:
 # circuit breaker 설정
 feign:
   hystrix:
-    enabled: false
+    enabled: true
 hystrix:
   command:
     default:

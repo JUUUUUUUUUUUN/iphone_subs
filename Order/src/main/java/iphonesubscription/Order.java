@@ -45,12 +45,14 @@ public class Order {
         // mappings goes here
         //OrderApplication.applicationContext.getBean(iphonesubscription.external.PaymentService.class).pay(payment);
 
-        System.out.println("\n\n================== ORDER >> PAYMENT REST 호출 ==================\n\n");
+        System.out.println("\n\n================== ORDER >> PAYMENT REST 호출 시작 ==================\n\n");
         Payment payment = new Payment();
 
         BeanUtils.copyProperties(this, payment);
         payment.setOrderId(this.getId());
         OrderApplication.applicationContext.getBean(PaymentService.class).pay(payment);
+
+        System.out.println("\n\n================== ORDER >> PAYMENT REST 호출 끝 ==================\n\n");
 
     }
     
