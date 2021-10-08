@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: subscription
-          image: isubcreg01.azurecr.io/subscription:v1
+          image: isub01cr.azurecr.io/subscription:v1
           ports:
             - containerPort: 8080

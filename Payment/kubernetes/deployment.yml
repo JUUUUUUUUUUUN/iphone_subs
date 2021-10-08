@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: payment
-          image: isubcreg01.azurecr.io/payment:v1
+          image: isub01cr.azurecr.io/payment:v1
           ports:
             - containerPort: 8080

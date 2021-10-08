@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: mypage
-          image: isubcreg01.azurecr.io/mypage:v1
+          image: isub01cr.azurecr.io/mypage:v1
           ports:
             - containerPort: 8080
