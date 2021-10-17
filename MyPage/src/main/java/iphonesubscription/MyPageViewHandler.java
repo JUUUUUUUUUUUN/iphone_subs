@@ -45,11 +45,11 @@ public class MyPageViewHandler {
     @StreamListener(KafkaProcessor.INPUT)
     public void whenPaymentCompleted_then_UPDATE_1(@Payload PaymentCompleted paymentCompleted) {
         System.out.println("\n\n============== MyPageViewHandler whenPaymentCompleted_then_UPDATE_1() 시작 ===========================\n\n");
-        System.out.println("\n\n============== paymentCompleted.getEventType(): " + paymentCompleted.getEventType() + "===========================\n\n");
 
         try {
-            if (!paymentCompleted.validate()) return;
+            //if (!paymentCompleted.validate()) return;
                 // view 객체 조회
+                System.out.println("\n\n============== paymentCompleted.getEventType(): " + paymentCompleted.getEventType() + "===========================\n\n");
 
                     List<MyPage> myPageList = myPageRepository.findByOrderId(paymentCompleted.getOrderId());
                     for(MyPage myPage : myPageList){
@@ -97,6 +97,7 @@ public class MyPageViewHandler {
                     for(MyPage myPage : myPageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
                     myPage.setPaymentStatus(paymentCancelled.getPaymentStatus());
+                    myPage.setQuantity(0);
                 // view 레파지 토리에 save
                 myPageRepository.save(myPage);
                 }
