@@ -30,7 +30,7 @@ public class Payment {
 
         System.out.println("\n\n============== PAYMENT onPostPersist() paymentCompleted.publishAfterCommit()==============\n\n");
     
-        /*
+        
         try {
         	System.out.println("\n\n============== PAYMENT onPostPersist() 지연설정 ==============\n\n  ");
             Thread.currentThread().sleep((long) (400 + Math.random() * 220));
@@ -38,7 +38,7 @@ public class Payment {
         	System.out.println("\n\n============== PAYMENT onPostPersist() 지연설정 에러 처리 ==============\n\n  ");
             e.printStackTrace();
         }
-        */
+        
     }
 
     @PostUpdate

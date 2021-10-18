@@ -44,6 +44,14 @@ api:
   url:
     payment: http://localhost:8082
 
+# circuit breaker 설정
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
 ---
 
 spring:
@@ -74,3 +82,12 @@ spring:
 api:
   url:
     payment: http://Payment:8080
+
+# circuit breaker 설정
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610

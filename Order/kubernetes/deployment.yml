@@ -19,6 +19,14 @@ spec:
           image: isub01cr.azurecr.io/order:v1
           ports:
             - containerPort: 8080
+          ## ConfigMap 설정
+          env:
+            - name: SYSTEM_MODE
+              valueFrom:
+                configMapKeyRef:
+                  name: systemmode
+                  key: sysmodeval
+          ## Readiness Probe 설정
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -27,6 +35,7 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 10
+          ## Liveness Probe 설정
           livenessProbe:
             httpGet:
               path: '/actuator/health'
